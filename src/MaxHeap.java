@@ -52,15 +52,13 @@ public class MaxHeap {
         //from the student class), and then adjust the heap as needed using
         //the changeKey algorithm from the videos.
 
-        if (elt == null) {
-            throw new NullPointerException("Grade not added to null student");
-        }
-
+        double oldGPA = elt.gpa();
         // Adds a new grade for {@code elt}
         elt.addGrade(gradePointsPerUnit, units);
 
         int location = students.indexOf(elt);
-        riseUp(location);
+        if (elt.gpa() > oldGPA) riseUp(location);
+        else maxHeapify(location);
     }
 
     private int parent(int index) {
@@ -104,7 +102,7 @@ public class MaxHeap {
      */
     private void riseUp(int k) {
         while (k > 0 && students.get(k).compareTo(students.get(parent(k))) > 0) {
-            swap(k,parent(k));
+            swap(k, parent(k));
             k = parent(k);
         }
     }
