@@ -57,6 +57,9 @@ public class MaxHeap {
         elt.addGrade(gradePointsPerUnit, units);
 
         int location = students.indexOf(elt);
+        if (location == -1) {
+            throw new IndexOutOfBoundsException("No student exists. Cannot add grade to student who does not exist.");
+        }
         if (elt.gpa() > oldGPA) riseUp(location);
         else maxHeapify(location);
     }
