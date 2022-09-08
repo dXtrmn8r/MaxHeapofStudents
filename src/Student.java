@@ -2,6 +2,7 @@ public class Student implements Comparable<Student> {
     private String name;
     private double gradePoints = 0;
     private int units = 0;
+    private int index = -1;
 
     public Student(String name) {
         this.name = name;
@@ -22,6 +23,14 @@ public class Student implements Comparable<Student> {
         if (units > 0)
             return gradePoints / units;
         return 0;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int newIndex) {
+        index = newIndex;
     }
 
     public void addGrade(double gradePointsPerUnit, int units) {

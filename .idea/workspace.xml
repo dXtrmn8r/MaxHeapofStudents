@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8a67293-8f7c-49cc-8dc4-9a60cda3b4fc" name="Changes" comment="CODE-REVIEW READY: Added more tests to increase Web-CAT code coverage.">
+    <list default="true" id="b8a67293-8f7c-49cc-8dc4-9a60cda3b4fc" name="Changes" comment="Added Exception when adding student not on the heap.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SimpleGivenTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModifiedTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MaxHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModifiedTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModifiedTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,22 +33,14 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ModifiedTests.convertFromListTest">
-    <configuration name="ModifiedTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MaxHeap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ModifiedTestSuite" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ModifiedTests.changeGradeEmptyHeap">
     <configuration name="ModifiedTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MaxHeap" />
       <option name="PACKAGE_NAME" value="" />
@@ -56,30 +50,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModifiedTests.convertFromListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModifiedTests.addingGradeForUnenrolledStudent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MaxHeap" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ModifiedTests" />
-      <option name="METHOD_NAME" value="convertFromListTest" />
+      <option name="METHOD_NAME" value="addingGradeForUnenrolledStudent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleGivenTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModifiedTests.changeGradeEmptyHeap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MaxHeap" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SimpleGivenTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ModifiedTests" />
+      <option name="METHOD_NAME" value="changeGradeEmptyHeap" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleGivenTests.topStudentFallingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModifiedTests.changeKeyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MaxHeap" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SimpleGivenTests" />
-      <option name="METHOD_NAME" value="topStudentFallingTest" />
+      <option name="MAIN_CLASS_NAME" value="ModifiedTests" />
+      <option name="METHOD_NAME" value="changeKeyTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModifiedTests.threeStudentsIndexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MaxHeap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ModifiedTests" />
+      <option name="METHOD_NAME" value="threeStudentsIndexTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -87,11 +92,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ModifiedTests.convertFromListTest" />
+        <item itemvalue="JUnit.ModifiedTests.changeGradeEmptyHeap" />
         <item itemvalue="JUnit.ModifiedTests" />
-        <item itemvalue="JUnit.ModifiedTestSuite" />
-        <item itemvalue="JUnit.SimpleGivenTests" />
-        <item itemvalue="JUnit.SimpleGivenTests.topStudentFallingTest" />
+        <item itemvalue="JUnit.ModifiedTests.addingGradeForUnenrolledStudent" />
+        <item itemvalue="JUnit.ModifiedTests.changeKeyTest" />
+        <item itemvalue="JUnit.ModifiedTests.threeStudentsIndexTest" />
       </list>
     </recent_temporary>
   </component>
@@ -125,7 +130,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662021434060</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CODE-REVIEW READY: Added more tests to increase Web-CAT code coverage.">
+      <created>1662022652587</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662022652587</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Exception when adding student not on the heap.">
+      <created>1662569031489</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662569031489</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,10 +166,26 @@
     <MESSAGE value="changeKey: added conditional to riseUp or maxHeapify depending on whether the node needs to move up or down" />
     <MESSAGE value="Added more tests to increase Web-CAT code coverage" />
     <MESSAGE value="CODE-REVIEW READY: Added more tests to increase Web-CAT code coverage." />
-    <option name="LAST_COMMIT_MESSAGE" value="CODE-REVIEW READY: Added more tests to increase Web-CAT code coverage." />
+    <MESSAGE value="Added Exception when adding student not on the heap." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Exception when adding student not on the heap." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ModifiedTests.java</url>
+          <line>211</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MaxHeap$ModifiedTests_addingGradeForUnenrolledStudent.ic" NAME="ModifiedTests.addingGradeForUnenrolledStudent Coverage Results" MODIFIED="1662568710616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/MaxHeap$ModifiedTests.ic" NAME="ModifiedTests Coverage Results" MODIFIED="1662618017984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

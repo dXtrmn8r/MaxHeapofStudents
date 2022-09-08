@@ -24,7 +24,10 @@ public class MaxHeap {
 
     public Student extractMax() {
         Student value = getMax();
-        students.set(0, students.get(size() - 1));
+        int lastIndex = size() - 1;
+        Student tempStudent = students.get(lastIndex);
+        tempStudent.setIndex(0);
+        students.set(0, tempStudent);
         students.remove(size() - 1);
         maxHeapify(0);
         return value;
@@ -43,6 +46,7 @@ public class MaxHeap {
             Using the bottom-up method from R. Sedgewick (2011)
          */
         int index = students.size() - 1;
+        elt.setIndex(index);
         riseUp(index);
 
     }
@@ -56,9 +60,15 @@ public class MaxHeap {
         // Adds a new grade for {@code elt}
         elt.addGrade(gradePointsPerUnit, units);
 
-        int location = students.indexOf(elt);
-        if (elt.gpa() > oldGPA) riseUp(location);
-        else maxHeapify(location);
+        int location = getIndex(elt);
+        if (location != -1) {
+            if (elt.gpa() > oldGPA) riseUp(location);
+            else maxHeapify(location);
+        }
+    }
+
+    public int getIndex(Student elt) {
+        return elt.getIndex();
     }
 
     private int parent(int index) {
@@ -74,9 +84,17 @@ public class MaxHeap {
     }
 
     private void swap(int from, int to) {
-        Student val = students.get(from);
-        students.set(from, students.get(to));
-        students.set(to, val);
+        Student oldStu = students.get(from);
+        Student newStu = students.get(to);
+
+        oldStu.setIndex(to);
+        newStu.setIndex(from);
+
+        students.set(from, newStu);
+        students.set(to, oldStu);
+
+        // newStu.setIndex(from);
+        // oldStu.setIndex(to);
     }
 
     private void maxHeapify(int index) {

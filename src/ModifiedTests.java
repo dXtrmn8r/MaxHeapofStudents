@@ -8,6 +8,9 @@ import static org.junit.Assert.fail;
 
 
 public class ModifiedTests {
+    /**
+     * Tests inserting one student into the heap.
+     */
     @Test
     public void oneStudent() {
         MaxHeap heap = new MaxHeap(10);
@@ -15,6 +18,9 @@ public class ModifiedTests {
         assertEquals(3.5, heap.getMax().gpa(), .000001);
     }
 
+    /**
+     * Tests inserting one student into the heap, and then deleting that student.
+     */
     @Test
     public void deleteThatOneStudent() {
         MaxHeap heap = new MaxHeap(10);
@@ -23,6 +29,9 @@ public class ModifiedTests {
         assertEquals(0, heap.size());
     }
 
+    /**
+     * Tests inserting two students in the heap.
+     */
     @Test
     public void twoStudents() {
         MaxHeap heap = new MaxHeap(10);
@@ -33,6 +42,10 @@ public class ModifiedTests {
         assertEquals(1, heap.size());
     }
 
+    /**
+     * Tests inserting two students into the heap with the second student having a higher
+     * GPA than the first.
+     */
     @Test
     public void twoStudentsInReverseOrder() {
         MaxHeap heap = new MaxHeap(10);
@@ -43,6 +56,9 @@ public class ModifiedTests {
         assertEquals(1, heap.size());
     }
 
+    /**
+     * Tests inserting two students with identical GPAs.
+     */
     @Test
     public void twoStudentswithIdenticalGPA() {
         MaxHeap heap = new MaxHeap(10);
@@ -53,6 +69,9 @@ public class ModifiedTests {
         assertEquals(1, heap.size());
     }
 
+    /**
+     * Tests inserting three {@code Students} into the heap.
+     */
     @Test
     public void threeStudents() {
         MaxHeap heap = new MaxHeap(10);
@@ -65,6 +84,35 @@ public class ModifiedTests {
         assertEquals(0, heap.size());
     }
 
+    @Test
+    public void threeStudentsIndexTest() {
+        MaxHeap heap = new MaxHeap(10);
+        heap.insert(new Student("John", 2.3, 48));
+        assertEquals(0, heap.getMax().getIndex());
+        heap.insert(new Student("David", 4.0, 55));
+        assertEquals(0, heap.getMax().getIndex());
+        heap.insert(new Student("James", 3.71, 60));
+        assertEquals("David", heap.extractMax().getName());
+        assertEquals(0, heap.getMax().getIndex());
+        assertEquals("James", heap.extractMax().getName());
+        assertEquals("John", heap.extractMax().getName());
+        assertEquals(0, heap.size());
+    }
+
+    @Test
+    public void addingGradeForUnenrolledStudent() {
+        MaxHeap heap = new MaxHeap(10);
+        heap.insert(new Student("John", 2.3, 48));
+        heap.insert(new Student("David", 4.0, 55));
+        heap.insert(new Student("James", 3.71, 60));
+        Student daniel = new Student("Daniel");
+        heap.addGrade(daniel, 3, 3);
+        assertEquals(3, heap.size());
+    }
+
+    /**
+     * Tests adding a couple of students into the heap before deleting all of them in order.
+     */
     @Test
     public void aInsertAFewStudents() {
         MaxHeap heap = new MaxHeap(10);
@@ -80,6 +128,9 @@ public class ModifiedTests {
         assertEquals(1.2, heap.extractMax().gpa(), .000001);
     }
 
+    /**
+     * Testing for exceptions. Unmodified from Dr. David Scot Taylor's code.
+     */
     @Test
     public void exceptionTest() {
         MaxHeap heap = new MaxHeap(10);
@@ -94,6 +145,10 @@ public class ModifiedTests {
 
     }
 
+    /**
+     * Testing {@code changeKey} found in {@code addGrade}.
+     * Modified by student from Dr. David Scot Taylor's code.
+     */
     @Test
     public void changeKeyTest() {
         MaxHeap heap = new MaxHeap(10);
@@ -122,13 +177,25 @@ public class ModifiedTests {
         heap.addGrade(johnny, 4, 4);  //should give him a 2.5
         Student tim = new Student("Tim", 2.5, 9);
         heap.insert(tim);
+        assertEquals(3, ken.getIndex());
+        assertEquals(3, heap.getIndex(ken));
+        assertEquals(6, tim.getIndex());
+        assertEquals(6, heap.getIndex(tim));
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.7, heap.extractMax().gpa(), .000001); // added by student
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.5, heap.extractMax().gpa(), .000001);
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.5, heap.extractMax().gpa(), .000001); // added by student
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.4, heap.extractMax().gpa(), .000001);
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.0, heap.extractMax().gpa(), .000001);
     }
 
+    /**
+     * Tests changeKey on a student who lowered their GPA.
+     */
     @Test
     public void topStudentFallingTest() {
         MaxHeap heap = new MaxHeap(10);
@@ -140,11 +207,17 @@ public class ModifiedTests {
         heap.insert(reed);
 
         heap.addGrade(reed, 0, 3); // should give him 2.0
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(3, heap.extractMax().gpa(), .000001);
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.4, heap.extractMax().gpa(), .000001);
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2, heap.extractMax().gpa(), .000001);
     }
 
+    /**
+     * Tests conversion from a Java {@code Collection} to a {@code MaxHeap}.
+     */
     @Test
     public void convertFromListTest() {
         List<Student> list = new LinkedList<>();
@@ -161,6 +234,14 @@ public class ModifiedTests {
             assertEquals(h_size - (j + 1), heap.size());
         }
 
+        assertEquals(0, heap.size());
+    }
+
+    @Test
+    public void changeGradeEmptyHeap() {
+        MaxHeap heap = new MaxHeap(10);
+        Student susan = new Student("Susan", 3.5, 60);
+        heap.addGrade(susan, 4, 4);
         assertEquals(0, heap.size());
     }
 
