@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8a67293-8f7c-49cc-8dc4-9a60cda3b4fc" name="Changes" comment="Added Exception when adding student not on the heap.">
+    <list default="true" id="b8a67293-8f7c-49cc-8dc4-9a60cda3b4fc" name="Changes" comment="Fixed converting collection to ArrayList ready for heapification (?), cleaned up swap() code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MaxHeap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ModifiedTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModifiedTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +36,10 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ModifiedTests.changeGradeEmptyHeap">
+  <component name="RunManager" selected="JUnit.ModifiedTests">
     <configuration name="ModifiedTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MaxHeap" />
       <option name="PACKAGE_NAME" value="" />
@@ -80,11 +79,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModifiedTests.threeStudentsIndexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModifiedTests.convertFromListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MaxHeap" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ModifiedTests" />
-      <option name="METHOD_NAME" value="threeStudentsIndexTest" />
+      <option name="METHOD_NAME" value="convertFromListTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,11 +91,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ModifiedTests.changeGradeEmptyHeap" />
         <item itemvalue="JUnit.ModifiedTests" />
+        <item itemvalue="JUnit.ModifiedTests.convertFromListTest" />
+        <item itemvalue="JUnit.ModifiedTests.changeGradeEmptyHeap" />
         <item itemvalue="JUnit.ModifiedTests.addingGradeForUnenrolledStudent" />
         <item itemvalue="JUnit.ModifiedTests.changeKeyTest" />
-        <item itemvalue="JUnit.ModifiedTests.threeStudentsIndexTest" />
       </list>
     </recent_temporary>
   </component>
@@ -144,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662569031489</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removed exception; initial code for Heap P2 assignment.">
+      <created>1662618643771</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1662618643771</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,18 +173,9 @@
     <MESSAGE value="Added more tests to increase Web-CAT code coverage" />
     <MESSAGE value="CODE-REVIEW READY: Added more tests to increase Web-CAT code coverage." />
     <MESSAGE value="Added Exception when adding student not on the heap." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Exception when adding student not on the heap." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ModifiedTests.java</url>
-          <line>211</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Removed exception; initial code for Heap P2 assignment." />
+    <MESSAGE value="Fixed converting collection to ArrayList ready for heapification (?), cleaned up swap() code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed converting collection to ArrayList ready for heapification (?), cleaned up swap() code." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -186,6 +183,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MaxHeap$ModifiedTests_addingGradeForUnenrolledStudent.ic" NAME="ModifiedTests.addingGradeForUnenrolledStudent Coverage Results" MODIFIED="1662568710616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/MaxHeap$ModifiedTests.ic" NAME="ModifiedTests Coverage Results" MODIFIED="1662618017984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/MaxHeap$ModifiedTests.ic" NAME="ModifiedTests Coverage Results" MODIFIED="1662650680112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

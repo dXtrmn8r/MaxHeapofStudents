@@ -9,10 +9,8 @@ public class MaxHeap {
     }
 
     public MaxHeap(Collection<Student> collection) {
-        students = new ArrayList<Student>(collection);
-        for (int i = size() / 2 - 1; i >= 0; i--) {
-            maxHeapify(i);
-        }
+        students = new ArrayList<Student>(collection.size());
+        for (Student s : collection) insert(s);
     }
 
     public Student getMax() {
@@ -84,17 +82,14 @@ public class MaxHeap {
     }
 
     private void swap(int from, int to) {
-        Student oldStu = students.get(from);
+        Student val = students.get(from);
         Student newStu = students.get(to);
 
-        oldStu.setIndex(to);
+        val.setIndex(to);
         newStu.setIndex(from);
 
         students.set(from, newStu);
-        students.set(to, oldStu);
-
-        // newStu.setIndex(from);
-        // oldStu.setIndex(to);
+        students.set(to, val);
     }
 
     private void maxHeapify(int index) {

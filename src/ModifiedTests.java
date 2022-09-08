@@ -229,6 +229,7 @@ public class ModifiedTests {
 
         MaxHeap heap = new MaxHeap(list);
         int h_size = heap.size();
+        assertEquals(10, h_size);
         for (int j = 0; j < h_size; ++j) {
             heap.extractMax();
             assertEquals(h_size - (j + 1), heap.size());
