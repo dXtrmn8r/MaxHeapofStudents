@@ -84,7 +84,22 @@ public class ModifiedTests {
         assertEquals(0, heap.size());
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test
+    public void threeStudentsIndexTest() {
+        MaxHeap heap = new MaxHeap(10);
+        heap.insert(new Student("John", 2.3, 48));
+        assertEquals(0, heap.getMax().getIndex());
+        heap.insert(new Student("David", 4.0, 55));
+        assertEquals(0, heap.getMax().getIndex());
+        heap.insert(new Student("James", 3.71, 60));
+        assertEquals("David", heap.extractMax().getName());
+        assertEquals(0, heap.getMax().getIndex());
+        assertEquals("James", heap.extractMax().getName());
+        assertEquals("John", heap.extractMax().getName());
+        assertEquals(0, heap.size());
+    }
+
+    @Test
     public void addingGradeForUnenrolledStudent() {
         MaxHeap heap = new MaxHeap(10);
         heap.insert(new Student("John", 2.3, 48));
@@ -92,6 +107,7 @@ public class ModifiedTests {
         heap.insert(new Student("James", 3.71, 60));
         Student daniel = new Student("Daniel");
         heap.addGrade(daniel, 3, 3);
+        assertEquals(3, heap.size());
     }
 
     /**
@@ -161,10 +177,19 @@ public class ModifiedTests {
         heap.addGrade(johnny, 4, 4);  //should give him a 2.5
         Student tim = new Student("Tim", 2.5, 9);
         heap.insert(tim);
+        assertEquals(3, ken.getIndex());
+        assertEquals(3, heap.getIndex(ken));
+        assertEquals(6, tim.getIndex());
+        assertEquals(6, heap.getIndex(tim));
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.7, heap.extractMax().gpa(), .000001); // added by student
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.5, heap.extractMax().gpa(), .000001);
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.5, heap.extractMax().gpa(), .000001); // added by student
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.4, heap.extractMax().gpa(), .000001);
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.0, heap.extractMax().gpa(), .000001);
     }
 
@@ -182,8 +207,11 @@ public class ModifiedTests {
         heap.insert(reed);
 
         heap.addGrade(reed, 0, 3); // should give him 2.0
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(3, heap.extractMax().gpa(), .000001);
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2.4, heap.extractMax().gpa(), .000001);
+        assertEquals(0, heap.getMax().getIndex());
         assertEquals(2, heap.extractMax().gpa(), .000001);
     }
 
@@ -206,6 +234,14 @@ public class ModifiedTests {
             assertEquals(h_size - (j + 1), heap.size());
         }
 
+        assertEquals(0, heap.size());
+    }
+
+    @Test
+    public void changeGradeEmptyHeap() {
+        MaxHeap heap = new MaxHeap(10);
+        Student susan = new Student("Susan", 3.5, 60);
+        heap.addGrade(susan, 4, 4);
         assertEquals(0, heap.size());
     }
 
